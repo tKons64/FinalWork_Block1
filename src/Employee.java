@@ -42,6 +42,12 @@ public class Employee {
                 '}';
     }
 
+    public String toStringWithoutDepartment() {
+        return "Сотрудник id=" + id + " {" +
+                "ФИО='" + name + '\'' +
+                ", ЗП=" + salary +
+                '}';
+    }
 
 
 }
