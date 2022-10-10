@@ -3,11 +3,14 @@ import java.util.Collection;
 import java.util.Collections;
 
 public class Main {
+
+    static Employee[] arrEmployees;
+
     public static void main(String[] args) {
         System.out.println("");
         System.out.println("Выполенение курсовой работы №1. Базовый уровень");
 
-        Employee[] arrEmployees = new Employee[10];
+        arrEmployees = new Employee[10];
         Employee employeeMinSalary;
         Employee employeeMaxSalary;
 
@@ -22,55 +25,55 @@ public class Main {
         Employee timonina = new Employee("Тимонина Татьяна Владимировна", 3, 78000);
         Employee semenov = new Employee("Семенов Андрей Сергеевич", 4, 45000);
 
-        if (insertEmployeeInArray(arrEmployees, petrov) == false) {
-        }else if (insertEmployeeInArray(arrEmployees, ivanov) == false){
-        }else if (insertEmployeeInArray(arrEmployees, sidorov) == false){
-        }else if (insertEmployeeInArray(arrEmployees, sharipov) == false){
-        }else if (insertEmployeeInArray(arrEmployees, strokova) == false){
-        }else if (insertEmployeeInArray(arrEmployees, kiselev) == false){
-        }else if (insertEmployeeInArray(arrEmployees, zazulov) == false){
-        }else if (insertEmployeeInArray(arrEmployees, binkovskay) == false){
-        }else if (insertEmployeeInArray(arrEmployees, timonina) == false){
-        }else if (insertEmployeeInArray(arrEmployees, semenov) == false){
-        }else if (insertEmployeeInArray(arrEmployees, semenov) == false){
-        }else if (insertEmployeeInArray(arrEmployees, semenov) == false){
+        if (insertEmployeeInArray(petrov) == false) {
+        }else if (insertEmployeeInArray(ivanov) == false){
+        }else if (insertEmployeeInArray(sidorov) == false){
+        }else if (insertEmployeeInArray(sharipov) == false){
+        }else if (insertEmployeeInArray(strokova) == false){
+        }else if (insertEmployeeInArray(kiselev) == false){
+        }else if (insertEmployeeInArray(zazulov) == false){
+        }else if (insertEmployeeInArray(binkovskay) == false){
+        }else if (insertEmployeeInArray(timonina) == false){
+        }else if (insertEmployeeInArray(semenov) == false){
+        }else if (insertEmployeeInArray(semenov) == false){
+        }else if (insertEmployeeInArray(semenov) == false){
         }
 
         System.out.println("Задание. Базовая сложность:");
         System.out.println("Список всех сотрудников:");
-        printEmployees(arrEmployees, 0);
+        printEmployees(0);
         System.out.println("========================");
         System.out.println();
-        System.out.println("Общая зарплата за месяц - " + totalSalaryInMounth(arrEmployees, 0));
-        System.out.println("Сотрудник с минимальной зарплатой - " + findEmployeeSalaryMin(arrEmployees, 0).toString());
-        System.out.println("Сотрудник с максимальной зарплатой - " + findEmployeeSalaryMax(arrEmployees, 0).toString());
-        System.out.println("Средняя зарплата за месяц - " + middleSalaryInMounth(arrEmployees, 0));
+        System.out.println("Общая зарплата за месяц - " + totalSalaryInMounth(0));
+        System.out.println("Сотрудник с минимальной зарплатой - " + findEmployeeSalaryMin(0).toString());
+        System.out.println("Сотрудник с максимальной зарплатой - " + findEmployeeSalaryMax( 0).toString());
+        System.out.println("Средняя зарплата за месяц - " + middleSalaryInMounth(0));
         System.out.println();
         System.out.println("ФИО всех сотрудников:");
-        printOnlyNameEmployees(arrEmployees);
+        printOnlyNameEmployees();
 
         System.out.println();
         System.out.println("Задание. Повышенная  сложность:");
-        indexationSalary(arrEmployees, 0, 10); // индесация зарплаты всех сотрудников
+        indexationSalary(0, 10); // индесация зарплаты всех сотрудников
         System.out.println("Список всех сотрудников, после индексации:");
-        printEmployees(arrEmployees, 0);
-        System.out.println("Сотрудник с минимальной зарплатой, отдел 3 - " + findEmployeeSalaryMin(arrEmployees, 3).toStringWithoutDepartment());
-        System.out.println("Сотрудник с максимальной зарплатой, отдел 2 - " + findEmployeeSalaryMax(arrEmployees, 2).toStringWithoutDepartment());
-        System.out.println("Общая зарплата за месяц, отдел 3 - " + totalSalaryInMounth(arrEmployees, 3));
-        System.out.println("Средняя зарплата за месяц, отдел 3 - " + middleSalaryInMounth(arrEmployees, 3));
-        indexationSalary(arrEmployees, 2, 5); // индесация зарплаты сотрудников, отдела 2
+        printEmployees(0);
+        System.out.println("Сотрудник с минимальной зарплатой, отдел 3 - " + findEmployeeSalaryMin(3).toStringWithoutDepartment());
+        System.out.println("Сотрудник с максимальной зарплатой, отдел 2 - " + findEmployeeSalaryMax(2).toStringWithoutDepartment());
+        System.out.println("Общая зарплата за месяц, отдел 3 - " + totalSalaryInMounth(3));
+        System.out.println("Средняя зарплата за месяц, отдел 3 - " + middleSalaryInMounth(3));
+        indexationSalary(2, 5); // индесация зарплаты сотрудников, отдела 2
         System.out.println("Список всех сотрудников отдела 2, после индексации:");
-        printEmployees(arrEmployees, 2);
+        printEmployees(2);
         System.out.println("Список всех сотрудников с зарплатой меньше 100 тыс.:");
-        printEmployeesSalaryLow(arrEmployees, 100000);
+        printEmployeesSalaryLow(100000);
         System.out.println("Список всех сотрудников с зарплатой выше или ровно 100 тыс.:");
-        printEmployeesSalaryHigh(arrEmployees, 100000);
+        printEmployeesSalaryHigh(100000);
 
 
     }
 
     // Метод добавляет сотрудника в массив
-    public static boolean insertEmployeeInArray(Employee[] arrEmployees, Employee employee) {
+    private static boolean insertEmployeeInArray(Employee employee) {
         boolean employeeAdd = false;
 
         for (int i = 0; i < arrEmployees.length; i++) {
@@ -86,7 +89,7 @@ public class Main {
         return employeeAdd;
     }
 
-    public static void printEmployees(Employee[] arrEmployees, int department){
+    private static void printEmployees(int department){
         for (int i = 0; i < arrEmployees.length; i++) {
             if (arrEmployees[i] == null) {
                 continue;
@@ -99,7 +102,7 @@ public class Main {
         }
     }
 
-    public static void printOnlyNameEmployees(Employee[] arrEmployees){
+    private static void printOnlyNameEmployees(){
         for (int i = 0; i < arrEmployees.length; i++) {
             if (arrEmployees[i] != null){
                 System.out.println(arrEmployees[i].getName());
@@ -109,18 +112,13 @@ public class Main {
 
 
     // Метод проверяет условия соответсвия департаменту. Для упращение написания основных методов
-    public static boolean checDepartmentMatches(Employee employees, int department) {
-        if (employees == null ||
-                (department != 0 && department != employees.getDepartment())) {
-            return false;
-        } else {
-            return true;
-        }
+    private static boolean checDepartmentMatches(Employee employees, int department) {
+        return employees != null && (department == 0 || department == employees.getDepartment());
     }
 
     // Метод возращает сумму всех ЗП. Если нужно считать по всему массиву то парамтер отдела = 0,
     // если по конретному отделу, то указываем номер отдела
-    public static int totalSalaryInMounth(Employee[] arrEmployees, int department) {
+    private static int totalSalaryInMounth(int department) {
         int totalSalaryInMounth = 0;
         for (int i = 0; i < arrEmployees.length; i++) {
             if (checDepartmentMatches(arrEmployees[i], department)){
@@ -132,11 +130,11 @@ public class Main {
 
     // Метод ищет сотрудника с максимальной ЗП. Если нужно искать по всему массиву то парамтер отдела = 0,
     // если по конретному отделу, то указываем номер отдела
-    public static Employee findEmployeeSalaryMin(Employee[] arrEmployees, int department) {
-        Employee EmployeeSalaryMin = new Employee("", 0, 0);
+    private static Employee findEmployeeSalaryMin(int department) {
+        Employee EmployeeSalaryMin = null;
         int minSalary = -1;
         for (int i = 0; i < arrEmployees.length; i++) {
-            if (checDepartmentMatches(arrEmployees[i], department) == false) {
+            if (!checDepartmentMatches(arrEmployees[i], department)) {
                 continue;
             }
             if (minSalary == -1 || minSalary > arrEmployees[i].getSalary()) {
@@ -149,11 +147,11 @@ public class Main {
 
     // Метод ищет сотрудника с максимальной ЗП. Если нужно искать по всему массиву то парамтер отдела = 0,
     // если по конретному отделу, то указываем номер отдела
-    public static Employee findEmployeeSalaryMax(Employee[] arrEmployees, int department) {
-        Employee EmployeeSalaryMax = new Employee("", 0, 0);
+    private static Employee findEmployeeSalaryMax(int department) {
+        Employee EmployeeSalaryMax = null;
         int maxSalary = 0;
         for (int i = 0; i < arrEmployees.length; i++) {
-            if (checDepartmentMatches(arrEmployees[i], department) == false) {
+            if (!checDepartmentMatches(arrEmployees[i], department)) {
                 continue;
             }
             if (maxSalary == 0|| maxSalary < arrEmployees[i].getSalary()) {
@@ -166,30 +164,30 @@ public class Main {
 
     // Метод возращает среднюю ЗП. Если нужно искать по всему массиву то парамтер отдела = 0,
     // если по конретному отделу, то указываем номер отдела
-    public static int middleSalaryInMounth(Employee[] arrEmployees, int department) {
-        if (department == 0) {
-            return totalSalaryInMounth(arrEmployees, 0) / arrEmployees.length;
-        } else {
-            return totalSalaryInMounth(arrEmployees, department) / employeesInDepartment(arrEmployees, department);
-        }
+    private static double middleSalaryInMounth(int department) {
+        return totalSalaryInMounth(department) / (double)(employeesInDepartment(department));
     }
 
     // Метод возвращает количетсво сотрудников  в отделе
-    public static int employeesInDepartment(Employee[] arrEmployees, int department) {
+    private static int employeesInDepartment(int department) {
         int count = 0;
         for (int i = 0; i < arrEmployees.length; i++) {
-            if (arrEmployees[i].getDepartment() == department) {
-                count++;
+            if (arrEmployees[i] != null) {
+                if (department == 0) {
+                    count++;
+                } else if (arrEmployees[i].getDepartment() == department) {
+                    count++;
+                }
             }
         }
         return count;
     }
 
     //Проиндексировать зарплату (вызвать изменение зарплат у всех сотрудников на величину аргумента в %).
-    public static void indexationSalary(Employee[] arrEmployees, int department, int percent) {
+    private static void indexationSalary(int department, int percent) {
         int salary;
         for (int i = 0; i < arrEmployees.length; i++) {
-            if (checDepartmentMatches(arrEmployees[i], department) == false){
+            if (!checDepartmentMatches(arrEmployees[i], department)){
                 continue;
             }
             salary = arrEmployees[i].getSalary();
@@ -198,7 +196,7 @@ public class Main {
     }
 
     // Метод печатает всех сотрудников с зарплатой меньше числа (вывести id, Ф. И. О. и зарплатой в консоль).
-    public static void printEmployeesSalaryLow(Employee[] arrEmployees, int levelSalary) {
+    private static void printEmployeesSalaryLow(int levelSalary) {
         for (int i = 0; i < arrEmployees.length; i++) {
             if (arrEmployees[i].getSalary() < levelSalary) {
                 System.out.println(arrEmployees[i].toStringWithoutDepartment());
@@ -207,7 +205,7 @@ public class Main {
     }
 
     // Метод печатает всех сотрудников с зарплатой больше (или равно) числа (вывести id, Ф. И. О. и зарплатой в консоль).
-    public static void printEmployeesSalaryHigh(Employee[] arrEmployees, int levelSalary) {
+    private static void printEmployeesSalaryHigh(int levelSalary) {
         for (int i = 0; i < arrEmployees.length; i++) {
             if (arrEmployees[i].getSalary() >= levelSalary) {
                 System.out.println(arrEmployees[i].toStringWithoutDepartment());
