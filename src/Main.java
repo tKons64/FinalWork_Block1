@@ -26,17 +26,29 @@ public class Main {
         Employee semenov = new Employee("Семенов Андрей Сергеевич", 4, 45000);
 
         if (insertEmployeeInArray(petrov) == false) {
+            printErrorWhenAddingEmployeeInArray(petrov);
         }else if (insertEmployeeInArray(ivanov) == false){
+            printErrorWhenAddingEmployeeInArray(ivanov);
         }else if (insertEmployeeInArray(sidorov) == false){
+            printErrorWhenAddingEmployeeInArray(sidorov);
         }else if (insertEmployeeInArray(sharipov) == false){
+            printErrorWhenAddingEmployeeInArray(sharipov);
         }else if (insertEmployeeInArray(strokova) == false){
+            printErrorWhenAddingEmployeeInArray(strokova);
         }else if (insertEmployeeInArray(kiselev) == false){
+            printErrorWhenAddingEmployeeInArray(kiselev);
         }else if (insertEmployeeInArray(zazulov) == false){
+            printErrorWhenAddingEmployeeInArray(zazulov);
         }else if (insertEmployeeInArray(binkovskay) == false){
+            printErrorWhenAddingEmployeeInArray(binkovskay);
         }else if (insertEmployeeInArray(timonina) == false){
+            printErrorWhenAddingEmployeeInArray(timonina);
         }else if (insertEmployeeInArray(semenov) == false){
+            printErrorWhenAddingEmployeeInArray(semenov);
         }else if (insertEmployeeInArray(semenov) == false){
+            printErrorWhenAddingEmployeeInArray(semenov);
         }else if (insertEmployeeInArray(semenov) == false){
+            printErrorWhenAddingEmployeeInArray(semenov);
         }
 
         System.out.println("Задание. Базовая сложность:");
@@ -83,10 +95,11 @@ public class Main {
                 break;
             }
         }
-        if (employeeAdd == false){
-            System.out.println(employee.getName() + " - не был добавлен в массив, т.к. в массиве нет свободного места!");
-        }
         return employeeAdd;
+    }
+
+    private static void printErrorWhenAddingEmployeeInArray(Employee employee) {
+        System.out.println(employee.getName() + " - не был добавлен в массив, т.к. в массиве нет свободного места!");
     }
 
     private static void printEmployees(int department){
